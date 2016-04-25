@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+ "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    
+    <session-factory name="session">
+        <!---!Configurações de configuração com o Banco de Dados-->
+    
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+        <!-- Defino o driver de conexão do BD-->
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <!-- Defino o driver de conexão do BD-->
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/semeru_jsf_maven_db?createDatabaseIfNotExist=true</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">app</property>
+    
+        <!-- HABILITA A EXIBIÇÃO DO SQL GERADO PELO HIBERNATE E FORMATA-O -->
+        
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+        
+        <!-- HABILITA A ATUALIZAÇÃO AUTOMÁTICA DA ESTRUTURA DE TABELAS PELO HIBERNATE -->
+        
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        
+        <!-- CONFIGURAÇÕES DO POOL DE CONEXÕES-->
+        
+        <property name="c3p0.min_size">1</property><!-- min de conexões-->
+        <property name="c3p0.max_size">20</property><!-- max de conexões-->
+        <property name="c3p0.timeout">300</property><!-- de 5 em 5 segundos fecha a sessão-->
+        <property name="c3p0.max_statements">80</property><!-- executa o no maximo 80 statements-->
+        <property name="c3p0.idle_test_period">300</property><!-- periodo de teste 5min-->
+        
+        <!-- LISTA DE ENTIDADES -->
+        <mapping class="br.com.semeru.model.entity.Cidade"/>        
+        <mapping class="br.com.semeru.model.entity.Endereco"/>      
+        <mapping class="br.com.semeru.model.entity.Estado"/>      
+        <mapping class="br.com.semeru.model.entity.PessoaEntity"/>               
+        <mapping class="br.com.semeru.model.entity.Sexo"/>
+        <mapping class="br.com.semeru.model.entity.TipoEndereco"/>
+        <mapping class="br.com.semeru.model.entity.TipoLogradouro"/>
+    
+    </session-factory>
+</hibernate-configuration>
