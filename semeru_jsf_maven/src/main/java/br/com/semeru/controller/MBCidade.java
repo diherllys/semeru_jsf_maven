@@ -31,12 +31,12 @@ public class MBCidade implements Serializable {
     }
 
     public String editCidade() {
-        return "/restrict/cadastrarCidade.xhtml";
+        return "/restrict/cadastrarCidade.faces";
     }
 
     public String limparCidade() {
         cidade = new Cidade();
-        return "/restrict/cadastrarCidade.xhtml";
+        return "/restrict/cadastrarCidade.faces";
     }
 
     public void deletarCidade() {
