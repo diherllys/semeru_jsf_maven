@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -35,13 +36,13 @@ public class Estado implements Serializable {
 
     @Column(name = "sigla", nullable = false, unique = true, length = 3)
     private String sigla;
-    
-    @OneToMany
-    @ForeignKey(name="enderecoEstado")
+
+    @OneToMany(mappedBy = "estado", fetch = FetchType.LAZY)
+    @ForeignKey(name = "enderecoEstado")
     private List<Endereco> enderecos;
-    
-    public Estado(){
-        
+
+    public Estado() {
+
     }
 
     public Integer getIdSexo() {
@@ -97,9 +98,5 @@ public class Estado implements Serializable {
         }
         return true;
     }
-    
-    
-    
-    
 
 }

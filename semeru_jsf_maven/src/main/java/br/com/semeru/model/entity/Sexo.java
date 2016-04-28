@@ -36,7 +36,7 @@ public class Sexo implements Serializable {
 
     @OneToMany(mappedBy = "sexo", fetch = FetchType.LAZY)//um sexo para cada pessoa, e varias pessoas podem ter 1 sexo
     @ForeignKey(name = "pessoaSexo")
-    private List<PessoaEntity> pessoasEntity;
+    private List<Pessoa> pessoasEntity;
 
     public Sexo() {
 
@@ -58,11 +58,11 @@ public class Sexo implements Serializable {
         this.descricao = descricao;
     }
 
-    public List<PessoaEntity> getPessoas() {
+    public List<Pessoa> getPessoas() {
         return pessoasEntity;
     }
 
-    public void setPessoas(List<PessoaEntity> pessoas) {
+    public void setPessoas(List<Pessoa> pessoas) {
         this.pessoasEntity = pessoas;
     }
 

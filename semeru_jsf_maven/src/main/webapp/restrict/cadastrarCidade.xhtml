@@ -8,7 +8,6 @@
                 xmlns:p="http://primefaces.org/ui"
                 template="./../resources/main.xhtml">
 
-
     <ui:define name="tarefas">
         <p:fieldset legend="Cadastrar Cidades" >
             <br/>
@@ -22,7 +21,7 @@
                             <h:inputHidden id="idCidade" value="#{mbCidade.cidade.idCidade}" ></h:inputHidden>
                             <p:outputLabel for="nomeCidade" value="Nome:"></p:outputLabel>
                             <p:inputText value="#{mbCidade.cidade.nome}" id="nomeCidade" size="40" 
-                                         onkeyup="this.value = this.value.toUppercase()" 
+                                         onkeyup="this.value = this.value.toUpperCase()" 
                                          required="true" requiredMessage="O campo {Nome} é obrigatorio"></p:inputText>
                         </h:panelGrid>
                         <p:panel>
@@ -33,24 +32,38 @@
                     </h:form>
                 </p:tab> 
             </p:tabView>
-            
+
             <h:form id="formTable" >
-                 <p:growl id="msg1"/>
-                 <p:dataTable id="idTabela" var="cidade" value="#{mbCidade.cidades}" rows="10" paginator="true" 
-                              emptyMessage="Nenhum registro encontrado!" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink}
-                              {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropDown}" rowsPerPageTemplate="5,10,15">
-                     <f:facet name="header">Lista de Cidades</f:facet>
-                     <p:column>
-                         <f:facet name="header">
-                             <h:outputText value="Nome" ></h:outputText>
-                         </f:facet>
-                         <h:outputText value="#{cidade.nome}" ></h:outputText>
-                     </p:column>
-                 
-                 </p:dataTable>
-                
+                <p:growl id="msg1"/>
+                <p:dataTable id="idTabela" var="cidade" value="#{mbCidade.cidades}"
+                             paginator="true" rows="10" emptyMessage="Nenhum registro encontrado"
+                             paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink}
+                             {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                             rowsPerPageTemplate="5,10,15">
+                    <f:facet name="header">Lista de Cidades</f:facet>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Nome"/>
+                        </f:facet>
+                        <h:outputText value="#{cidade.nome}"/>
+                    </p:column>
+                    <p:column>
+                        <p:commandButton value="Editar" image="ui-icon ui-icon-pencil"
+                                         process="@this" update=":tbv1:formCidade">
+                            <f:setPropertyActionListener target="#{mbCidade.cidade}"
+                                                         value="#{cidade}"/>
+                        </p:commandButton>
+                        <p:commandButton value="Remover" action="#{mbCidade.deletarCidade()}"
+                                         image="ui-icon ui-icon-close" update="@form">
+                            <f:setPropertyActionListener target="#{mbCidade.cidade}"
+                                                         value="#{cidade}"/>
+                        </p:commandButton>
+                    </p:column>
+
+                </p:dataTable>
+
             </h:form>
-            
+
         </p:fieldset>
     </ui:define>
 

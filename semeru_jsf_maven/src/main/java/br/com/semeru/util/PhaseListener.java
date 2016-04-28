@@ -16,7 +16,7 @@ import org.hibernate.Session;
 public class PhaseListener implements javax.faces.event.PhaseListener {
 
     @Override
-    public void afterPhase(PhaseEvent phase) {//abrir sessão do hibernate e setala
+    public void beforePhase(PhaseEvent phase) {//abrir sessão do hibernate e setala
         if (phase.getPhaseId().equals(PhaseId.RESTORE_VIEW)) {
             System.out.println("Antes da Phase: " + phase.getPhaseId().toString());
             Session session = HibernateUtil.getSessionFactory().openSession();
@@ -27,7 +27,7 @@ public class PhaseListener implements javax.faces.event.PhaseListener {
     }
 
     @Override
-    public void beforePhase(PhaseEvent phase) {
+    public void afterPhase(PhaseEvent phase) {
         System.out.println("Depois da Phase " + phase.getPhaseId().toString());
         if (phase.getPhaseId().equals(PhaseId.RENDER_RESPONSE)) {
             Session session = FacesContextUtil.getRequestSession();

@@ -26,7 +26,7 @@ import org.hibernate.annotations.ForeignKey;
  */
 @Entity
 @Table(name = "pessoa")
-public class PessoaEntity implements Serializable {
+public class Pessoa implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -64,7 +64,7 @@ public class PessoaEntity implements Serializable {
     @JoinColumn(name = "idSexo", referencedColumnName = "idSexo")
     private Sexo sexo;
 
-    public PessoaEntity() {
+    public Pessoa() {
     }
 
     public Integer getIdPessoa() {
@@ -157,7 +157,7 @@ public class PessoaEntity implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final PessoaEntity other = (PessoaEntity) obj;
+        final Pessoa other = (Pessoa) obj;
         if (this.idPessoa != other.idPessoa && (this.idPessoa == null || !this.idPessoa.equals(other.idPessoa))) {
             return false;
         }

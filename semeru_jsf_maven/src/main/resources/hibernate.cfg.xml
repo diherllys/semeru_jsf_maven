@@ -30,7 +30,7 @@
         <mapping class="br.com.semeru.model.entity.Cidade"/>
         <mapping class="br.com.semeru.model.entity.Endereco"/>
         <mapping class="br.com.semeru.model.entity.Estado"/>
-        <mapping class="br.com.semeru.model.entity.PessoaEntity"/>
+        <mapping class="br.com.semeru.model.entity.Pessoa"/>
         <mapping class="br.com.semeru.model.entity.Sexo"/>
         <mapping class="br.com.semeru.model.entity.TipoEndereco"/>
         <mapping class="br.com.semeru.model.entity.TipoLogradouro"/>

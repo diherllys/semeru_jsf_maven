@@ -54,7 +54,7 @@ class Endereco implements Serializable {
         this.estado = new Estado();
         this.tipoLogradouro = new TipoLogradouro();
         this.tipoEndereco = new TipoEndereco();
-        this.pessoa = new PessoaEntity();
+        this.pessoa = new Pessoa();
     }
 
 //    @Column(name = "descricaoEndereco", nullable = false, length = 40)
@@ -62,7 +62,7 @@ class Endereco implements Serializable {
     @OneToOne(optional = true, fetch = FetchType.LAZY)//pode cadastrar sem ter endereco, fetchType = usa eagle ele puxa todos os endereços msm que não precise torando mais pesado, lazy tras só o valor que vc quer explicitamente
     @ForeignKey(name = "enderecoPessoa")
     @JoinColumn(name = "idPessoa", referencedColumnName = "idPessoa")
-    private PessoaEntity pessoa;
+    private Pessoa pessoa;
 
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     @ForeignKey(name = "enderecoTipoLogradouro")
@@ -132,11 +132,11 @@ class Endereco implements Serializable {
         this.complemento = complemento;
     }
 
-    public PessoaEntity getPessoa() {
+    public Pessoa getPessoa() {
         return pessoa;
     }
 
-    public void setPessoa(PessoaEntity pessoa) {
+    public void setPessoa(Pessoa pessoa) {
         this.pessoa = pessoa;
     }
 
