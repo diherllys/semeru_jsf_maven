@@ -19,12 +19,6 @@
     
     <!--tem dependencia do primefaces thema-->
     
-    <dependency>
-        <groupId>org.primefaces.themes</groupId>
-        <artifactId>south-street</artifactId>
-        <version>1.0.4</version>
-    </dependency>
-    
     <context-param>
         <param-name>primefaces.THEME</param-name>
         <param-value>south-street</param-value>
