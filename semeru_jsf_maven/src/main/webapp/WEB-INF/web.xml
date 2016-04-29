@@ -18,10 +18,10 @@
     </session-config>
     
     <!--tem dependencia do primefaces thema-->
-    
+     <!--pra mudar thema do primefaces-->
     <context-param>
         <param-name>primefaces.THEME</param-name>
-        <param-value>south-street</param-value>
+        <param-value>humanity</param-value>
     </context-param>
     
     <!-- Configurações do JavaServer Faces -->

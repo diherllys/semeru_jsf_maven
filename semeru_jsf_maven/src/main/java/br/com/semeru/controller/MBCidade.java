@@ -37,7 +37,7 @@ public class MBCidade implements Serializable {
 
     public String limparCidade() {
         cidade = new Cidade();
-        return "/restrict/cadastrarCidade.faces";
+        return editCidade();
     }
 
     public void deletarCidade() {

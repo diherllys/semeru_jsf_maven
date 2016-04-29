@@ -157,6 +157,30 @@
             <artifactId>south-street</artifactId>  
             <version>${themes.version}</version> 
         </dependency>
+        
+        <dependency>  
+            <groupId>org.primefaces.themes</groupId>  
+            <artifactId>humanity</artifactId>  
+            <version>${themes.version}</version> 
+        </dependency>
+        
+        <dependency>  
+            <groupId>org.primefaces.themes</groupId>  
+            <artifactId>start</artifactId>  
+            <version>${themes.version}</version> 
+        </dependency>
+        
+        <dependency>  
+            <groupId>org.primefaces.themes</groupId>  
+            <artifactId>blitzer</artifactId>  
+            <version>${themes.version}</version> 
+        </dependency>
+        
+        <dependency>  
+            <groupId>org.primefaces.themes</groupId>  
+            <artifactId>excite-bike</artifactId>  
+            <version>${themes.version}</version> 
+        </dependency>
 
         <!-- SLF4J -->
         <dependency>
